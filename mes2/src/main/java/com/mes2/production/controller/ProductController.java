@@ -40,12 +40,6 @@ public class ProductController {
 	private ProductService productService;
 	
 
-	// http://localhost:8088/product/header
-	@GetMapping("/header")
-	public String header() {
-		log.info("헤더 호출");
-		return "/header/header";
-	}
 	
 	// http://localhost:8088/product/search
 	@GetMapping("/search")

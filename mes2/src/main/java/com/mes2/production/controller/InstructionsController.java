@@ -49,35 +49,6 @@ public class InstructionsController {
 	private final Logger log = LoggerFactory.getLogger(ProductController.class);
 	
 	
-	@GetMapping("/start")
-	public String startGET() {
-		
-		InstructionsDTO instructsDto = new InstructionsDTO();
-		instructsDto.setCode("20231219A0001");
-		instructsDto.setLine(1);
-		instructsDto.setMdpCode("A1111");
-		instructsDto.setType("F");
-		instructsDto.setSopCode("S1111");
-		instructsDto.setState("S");
-		
-		try {
-			instructionsService.saveInstructions(instructsDto);
-		} catch (ValidationValueErrorException e) {
-			
-			e.printStackTrace();
-		}
-		
-		return "ok";
-	}
-	
-	//http://localhost:8088/instructions/detail/20231219A0001
-	@GetMapping("/detail/{code}")
-	public String detailGET(@PathVariable("code")String code) {
-		
-		//
-		return null;
-	}
-	
 	//http://localhost:8088/instructions/search
 	@GetMapping("/search")
 	public String searchGET(Model model,

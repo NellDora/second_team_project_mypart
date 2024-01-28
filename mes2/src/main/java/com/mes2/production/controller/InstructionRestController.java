@@ -69,10 +69,6 @@ public class InstructionRestController {
 	@GetMapping(value="/getMaterials" , produces ="application/json; charset=utf-8")
 	public RequestMaterialsDTO getMaterials(@RequestParam("sopCode") String sopCode , @RequestParam("salesQuantity") int salesQuantity) {
 		//String sopCode="ACP-bsp002-ORD-20231231-bsp002-1-100";
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+sopCode);
-		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+salesQuantity);
-		
-		
 		RequestMaterialsDTO rqml = instructionsDAO.selectBySopCodeForMaterials(sopCode);
 		
 		int precessStatus = 0;
